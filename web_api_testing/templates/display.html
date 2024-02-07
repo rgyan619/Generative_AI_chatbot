@@ -1,0 +1,25 @@
+<!doctype html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="refresh" content= "{{ t }}"/>
+    <title>Python Flask - Video Upload and Play Example</title>
+</head>
+<body>
+    <h1>Current Video</h1>
+
+	{% if filename %}
+<div style="margin: 10px auto;">
+	<video width="320" height="240" controls autoplay muted loop>
+		<source src="{{url_for('static', filename= filename)}}" type="video/mp4">
+	</video>
+	
+</div>
+{% endif %}
+
+{% if image %}
+<img src="{{url_for('static', filename= image)}}" alt="Girl in a jacket" width="320" height="240">
+{% endif %}
+</body>
